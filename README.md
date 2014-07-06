@@ -19,7 +19,7 @@ technology stack
 Kanban:
 ========
 
-https://trello.com/b/qEiAwXei/user-manager-api
+https://trello.com/b/DxjgYsZY/user-manager-api
 
 CI
 ======
