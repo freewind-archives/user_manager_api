@@ -29,7 +29,7 @@ http://jenkins.shuzu.org:8080/job/user_manager_api/
 Demo
 =====
 
-http://shuzu.org:10002
+http://user-manager-api.herokuapp.com
 
 Usage
 =====
