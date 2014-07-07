@@ -1,4 +1,0 @@
-#!/bin/bash
-mkdir -p logs
-nohup ./bin/user_manager_api -Dhttp.port=10002 >/dev/null 2>&1 &
-# You can provide all the -Dsettings you need to set for your application here :-)
