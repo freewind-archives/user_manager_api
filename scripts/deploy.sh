@@ -1,6 +1,6 @@
 #!/bin/bash
 
-heroku apps:destroy user-manager-api --confirm
+heroku apps:destroy -a user-manager-api --confirm user-manager-api
 heroku apps:create user-manager-api
 
 git checkout master
