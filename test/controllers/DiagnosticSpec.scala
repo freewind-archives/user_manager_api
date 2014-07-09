@@ -6,9 +6,6 @@ import org.specs2.runner._
 import play.api.test._
 import play.api.test.Helpers._
 
-/**
- * Created by yongmin_xia on 9/07/2014.
- */
 @RunWith(classOf[JUnitRunner])
 class DiagnosticSpec  extends Specification {
   "Diagnostic" should {
@@ -17,6 +14,12 @@ class DiagnosticSpec  extends Specification {
       status(response) must equalTo(OK)
       contentType(response) must beSome.which(_ == "text/plain")
       contentAsString(response) must contain ("User Manager Api")
+    }
+
+    "return OK when ping" in new WithApplication{
+      val ping = route(FakeRequest(GET, "/diagnostic/ping")).get
+
+      status(ping) must equalTo(OK)
     }
   }
 
