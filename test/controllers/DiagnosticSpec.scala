@@ -30,6 +30,12 @@ class DiagnosticSpec  extends Specification {
       contentType(response) must beSome.which(_ == "application/json")
       contentAsJson(response) must equalTo(Json.obj("hello" -> name))
     }
+
+    "return build number" in new WithApplication() {
+      val response = route(FakeRequest(GET, "/diagnostic/version")).get
+      status(response) must equalTo(OK)
+      contentAsString(response) must equalTo("unknown")
+    }
   }
 
 }

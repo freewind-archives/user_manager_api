@@ -1,7 +1,10 @@
 package controllers
 
+import java.io.FileNotFoundException
+
 import play.api.mvc._
 import play.api.libs.json._
+import scala.io.Source
 
 object Diagnostic extends Controller {
   def name: Action[AnyContent] = Action {
@@ -17,4 +20,15 @@ object Diagnostic extends Controller {
     Ok(Json.obj("hello" -> name))
   }
 
+  def version: Action[AnyContent] = Action {
+    Ok(buildNumber)
+  }
+
+  private def buildNumber: String = {
+    try {
+      Source.fromFile("build_number").getLines.mkString
+    } catch {
+      case _: Exception => "unknown"
+    }
+  }
 }
